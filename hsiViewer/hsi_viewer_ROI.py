@@ -253,9 +253,8 @@ class viewer(QMainWindow):
         self.imv_imType = 'RGB' 
         
     def stretch_arr(self, arr):
-        arr_data = arr[self.mask>0]
-        low_thresh_val = np.percentile(arr_data, self.stretch[0])
-        high_thresh_val = np.percentile(arr_data, self.stretch[1])
+        low_thresh_val = np.percentile(arr, self.stretch[0])
+        high_thresh_val = np.percentile(arr, self.stretch[1])
         arr = arr - low_thresh_val
         arr[arr<0] = 0
         arr = arr/(high_thresh_val-low_thresh_val)
