@@ -1,15 +1,3 @@
-
-__pycache__/microscene_functions.cpython-311.pyc
-hsiViewer/__pycache__/hsi_layers_viewer.cpython-310.pyc
-hsiViewer/__pycache__/hsi_layers_viewer.cpython-39.pyc
-hsiViewer/__pycache__/hsi_viewer.cpython-310.pyc
-hsiViewer/__pycache__/hsi_viewer.cpython-311.pyc
-hsiViewer/__pycache__/hsi_viewer.cpython-39.pyc
-hsiViewer/__pycache__/hsi_viewer_2.cpython-310.pyc
-hsiViewer/__pycache__/hsi_viewer_2.cpython-39.pyc
-hsiViewer/__pycache__/hsi_viewer_array.cpython-311.pyc
-hsiViewer/__pycache__/hsi_viewer_layers.cpython-311.pyc
-hsiViewer/__pycache__/hsi_viewer_ROI.cpython-310.pyc
-hsiViewer/__pycache__/hsi_viewer_ROI.cpython-311.pyc
-hsiViewer/__pycache__/hsi_viewer_ROI_selection.cpython-310.pyc
+__pycache__/
+hsiViewer/__pycache__/
 UPWINS_Microscene.zip
