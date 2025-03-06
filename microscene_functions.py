@@ -10,11 +10,11 @@ import pandas
 import sklearn
 
 
-def make_rgb(imArr, wl):
+def make_rgb(imArr, wl, stretch=[2,98]):
     
-    def stretch_arr(arr):
-        low_thresh_val = np.percentile(arr, 0)
-        high_thresh_val = np.percentile(arr, 98)
+    def stretch_arr(arr, stretch):
+        low_thresh_val = np.percentile(arr, stretch[0])
+        high_thresh_val = np.percentile(arr, stretch[1])
         arr = np.clip(arr, a_min=low_thresh_val, a_max=high_thresh_val)
         arr = arr - np.min(arr)
         arr = arr/np.max(arr)
@@ -28,11 +28,10 @@ def make_rgb(imArr, wl):
     index_green_band = np.argmin(np.abs(wl-550))
     index_blue_band = np.argmin(np.abs(wl-460))  
     
-    # create the RGB image
     imRGB = np.zeros((nr,nc,3))
-    imRGB[:,:,0] = stretch_arr(np.squeeze(imArr[:,:,index_red_band]))
-    imRGB[:,:,1] = stretch_arr(np.squeeze(imArr[:,:,index_green_band]))
-    imRGB[:,:,2] = stretch_arr( np.squeeze(imArr[:,:,index_blue_band]))
+    imRGB[:,:,0] = stretch_arr(np.squeeze(imArr[:,:,index_red_band]), stretch)
+    imRGB[:,:,1] = stretch_arr(np.squeeze(imArr[:,:,index_green_band]), stretch)
+    imRGB[:,:,2] = stretch_arr( np.squeeze(imArr[:,:,index_blue_band]), stretch)
     
     return imRGB
             
